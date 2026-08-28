@@ -3,8 +3,8 @@ import requests, ddddocr, time
 # 初始化ocr对象，只初始化一次！不要循环里面反复new，会很慢
 ocr = ddddocr.DdddOcr(show_ad=False)
 bj = 1
+count = 0
 while bj:
-    count = 0
     headers1 = {
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -59,7 +59,7 @@ while bj:
                 print(response.text)
                 print(day)
                 break
-        # break
+        break
     count += 1
     if count >= 20:
         break
