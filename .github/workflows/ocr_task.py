@@ -38,8 +38,8 @@ while bj:
     url2 = 'http://47.83.149.21:10099/auth/checklogin'
     data = {
     'ProxyIp': '47.83.149.21',
-    'GameID': 'sfeis123',
-    # 'GameID': '白开水123',
+    # 'GameID': 'sfeis123',
+    'GameID': '白开水123',
     # 'Password': 'csp1989123',
     'Password': 'csf1989',
     'GameCode': yzm,
