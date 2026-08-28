@@ -1,0 +1,27 @@
+name: OCR定时任务
+on:
+  schedule:
+    # ========= cron是UTC时间！=========
+    # 示例：想要北京时间 08:00运行 → UTC 00:00，写 0 0 * * *
+    # cron格式：分 时 日 月 星期
+    - cron: '0 0 * * *'
+  workflow_dispatch:   # ✅网页可以手动点按钮立即运行调试
+
+jobs:
+  run_task:
+    runs-on: ubuntu‑latest
+    steps:
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 安装系统依赖(ddddocr必须libgomp1)
+        run: |
+          sudo apt‑get update
+          sudo apt‑get install libgomp1‑y
+
+      - name: 安装python库
+        run: |
+          pip install ddddocr requests
+
+      - name: 执行ocr脚本
+        run: python3 ocr_task.py
