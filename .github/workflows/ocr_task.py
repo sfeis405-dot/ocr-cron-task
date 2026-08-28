@@ -4,7 +4,7 @@ import requests, ddddocr, time
 ocr = ddddocr.DdddOcr(show_ad=False)
 bj = 1
 count = 0
-while bj:
+for i in range(13):
     headers1 = {
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -59,7 +59,4 @@ while bj:
                 print(response.text)
                 print(day)
                 break
-        break
-    count += 1
-    if count >= 20:
-        break
+
