@@ -2,7 +2,9 @@ import requests, ddddocr, time
 
 # 初始化ocr对象，只初始化一次！不要循环里面反复new，会很慢
 ocr = ddddocr.DdddOcr(show_ad=False)
-while 1:
+bj = 1
+while bj:
+    count = 0
     headers1 = {
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -36,7 +38,9 @@ while 1:
     url2 = 'http://47.83.149.21:10099/auth/checklogin'
     data = {
     'ProxyIp': '47.83.149.21',
-    'GameID': '白开水123',
+    'GameID': 'sfeis123',
+    # 'GameID': '白开水123',
+    # 'Password': 'csp1989123',
     'Password': 'csf1989',
     'GameCode': yzm,
     }
@@ -55,4 +59,7 @@ while 1:
                 print(response.text)
                 print(day)
                 break
+        # break
+    count += 1
+    if count >= 20:
         break
